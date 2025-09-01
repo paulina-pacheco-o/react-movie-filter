@@ -19,9 +19,9 @@ const MovieSelect = () => {
         <div className="col-100">
           <select>
             <option value=" ">Scegli il genere</option>
-            {movies.map((movie) => {
+            {movies.map((movie, i) => {
               return (
-                <option value={movies.genre}>{movies.genre}</option>
+                <option key={i} value={movie.genre}>{movie.genre}</option>
               )
             })}
           </select>
