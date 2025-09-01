@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const movies = [
   { title: 'Inception', genre: 'Fantascienza' },
@@ -9,7 +9,10 @@ const movies = [
   { title: 'Pulp Fiction', genre: 'Thriller' },
 ]
 
+
 const MovieSelect = () => {
+  const [genre, setGenre] = useState("");
+
   return (
     <div className="container">
       <div className="row">
@@ -17,7 +20,7 @@ const MovieSelect = () => {
           <h1>Lista dei film</h1>
         </div>
         <div className="col-100">
-          <select>
+          <select value={genre} onChange={(e) => setGenre(e.target.value)}>
             <option value=" ">Scegli il genere</option>
             {movies.map((movie, i) => {
               return (
